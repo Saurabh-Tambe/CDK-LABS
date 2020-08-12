@@ -1,0 +1,14 @@
+//Queue Implementation
+
+1.Enqueue
+Algorithm:1.Check queue is full or not
+          2.If queue is full show queue is full
+          3.Else Icrement rear to point to next location
+          4.add new data where rare is pointing
+          
+          
+2.Dequeue
+Algorithm:1.Check queue is empty or not
+          2.If empty show queue empty message
+          3.Else access data where front is pointing
+          4.Increment front to point to next location
