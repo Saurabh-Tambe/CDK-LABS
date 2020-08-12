@@ -1,5 +1,5 @@
 //Queue Implementation
-
+//Front and Rear are two pointers 
 1.Enqueue
 Algorithm:1.Check queue is full or not
           2.If queue is full show queue is full
