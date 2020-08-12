@@ -21,3 +21,8 @@ Steps:1.Create New Node
       3.newnode->next=prevnode->next;
       4.prevnode->next=newnode
 
+4.Remove element 
+Steps:1.Find prev node of node to be deleted
+      2.change next of prevnode
+      3.free memory for node to be deleted
+      
