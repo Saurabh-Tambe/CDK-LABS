@@ -1,0 +1,24 @@
+//Binary Tree
+
+1.Hierarchical data structure
+2.Dynamic memory allocation
+3.Sequential Access
+4.Traversing start from root node
+
+Main applications of trees include:
+1. Manipulate hierarchical data.(File structure in OS)
+2. Make information easy to search
+3. Manipulate sorted lists of data.
+ 
+
+A Tree node contains following parts.
+1. Data
+2. Pointer to left child
+3. Pointer to right child
+
+Types:
+1.Full Binary Tree :A Binary Tree is a full binary tree if every node has 0 or 2 children
+2.Complete Binary Tree: A Binary Tree is a complete Binary Tree if all the levels are completely filled except possibly the last level 
+3.Perfect Binary Tree :A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level.
+4.Balanced Binary Tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.
+5.A degenerate (or pathological) tree: A Tree where every internal node has one child. Such trees are performance-wise same as linked list.
