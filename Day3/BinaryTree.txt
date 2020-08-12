@@ -6,7 +6,7 @@
 4.Traversing start from root node
 
 Main applications of trees include:
-1. Manipulate hierarchical data.(File structure in OS)
+1. Manipulate hierarchical data.
 2. Make information easy to search
 3. Manipulate sorted lists of data.
  
