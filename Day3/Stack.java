@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 public class Stack {
  int top=-1;
  int count=5;
@@ -71,6 +71,12 @@ public class Stack {
      }  
 	 }
  }  
+ 
+ void top()
+ {
+	 
+ System.out.println("Top Element:"+arr[top]);
+ }
 	public static void main(String[] args) {
 		
 		  int choice=0;  
@@ -78,10 +84,10 @@ public class Stack {
 		    Stack s = new Stack();  
 		    System.out.println("Stack operations using array\n");  
 		  
-		    while(choice != 4)  
+		    while(choice != 5)  
 		    {  
 		        System.out.println("\nChose one from the below options...\n");  
-		        System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
+		        System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Top element\n5.Exit");  
 		        System.out.println("\n Enter your choice \n");        
 		        choice = sc.nextInt();  
 		        switch(choice)  
@@ -102,8 +108,14 @@ public class Stack {
 		            {  
 		                s.display();  
 		                break;  
-		            }  
-		            case 4:   
+		            } 
+		            case 4:
+		            {
+		            	s.top();
+		            	break;
+		            	
+		            }
+		            case 5:   
 		            {  
 		                
 		                System.exit(0);  
@@ -120,3 +132,4 @@ public class Stack {
 	}
 
 }
+
