@@ -1,0 +1,23 @@
+//Linked List operations:
+1.Add element at Last :
+Steps:1.Create New Node
+      2.Add data to new node
+      3.newnode->next=NULL;
+      4.If linked list is empty make newnode as head
+      5.else Traverse till last node and change next of lastnode
+          lastnode->next=newnode;
+      
+2.Add element at front
+steps:1.Create New Node
+      2.Add data to new node
+      3.Make next of newnode as head 
+          newnode->next=head;
+      4.move head to point to newnode
+          head->newnode
+          
+3.Add element Between two nodes
+Steps:1.Create New Node
+      2.Add data to new node
+      3.newnode->next=prevnode->next;
+      4.prevnode->next=newnode
+
