@@ -1,0 +1,28 @@
+Comparison Of Data Structures:
+1.Array
+->Sequential Access
+->stored at contiguous memory locations
+->Static Allocation
+->Use for limited data
+->Array contains elements of same data type
+
+
+2.Linked List
+->Sequential Access
+->Dynamic Memory Allocation
+->A linked list is a linear data structure
+
+
+3.Stack
+->Linear Data Structure
+->stack follows the LIFO (Last In First Out) principle
+->Dynamic Memory Allocation
+->The stack can contain elements of the different data types.
+->Stack has only one end open for pushing and popping the data 
+
+
+4.Queue
+->Queues are based on the FIFO principle,
+->Dynamic Memory Allocation
+->The queue can contain elements of the different data types.
+-> Queue has both ends open for enqueuing and dequeuing the data 
