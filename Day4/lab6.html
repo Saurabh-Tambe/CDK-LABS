@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<form>
-EMP No.<input type="text"><br/>
-EMP. NAME:<input type="text"><br/>
-Birthdate:<input type="date"><br/>
-Email:<input type="email"><br/>
-City Preference:<input type="checkbox">Pune <input type="checkbox">Banglore <input type="checkbox">Mumbai <input type="checkbox">Hyderabad<br/> 
-Marital Status:<input type="radio" name="ms">Married <input type="radio" name="ms">Single<br/>
-Education:<select><option>BE/BTECH</option><option>ME/MTECH</option><option>BSC/BCS</option><option>MCS/MCA/MA</option></select><br/>
-
+<form ation="" method="get">
+<table>
+<tr><td>EMP No.</td><td><input type="text" name="empno"></td></tr>
+<tr><td>EMP. NAME:</td><td><input type="text" name="ename"></td></tr>
+<tr><td>Birthdate:</td><td><input type="date" name="bdate"></td></tr>
+<tr><td>Email:</td><td><input type="email" name="mail"></td></tr>
+<tr><td>City Preference:</td><td><input type="checkbox">Pune <input type="checkbox">Banglore <input type="checkbox">Mumbai <input type="checkbox">Hyderabad</td></tr>
+<tr><td>Marital Status:</td><td><input type="radio" name="ms">Married <input type="radio" name="ms">Single</td></tr>
+<tr><td>Education:</td><td><select><option value="btech">BE/BTECH</option><option value="mtech">ME/MTECH</option><option value="bsc">BSC/BCS</option><option value="mcs">MCS/MCA/MA</option></select></td></tr>
+</table>
+<input type="submit">
 </form>
 </body>
 </html>
