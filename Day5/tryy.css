@@ -1,0 +1,34 @@
+@CHARSET "ISO-8859-1";
+
+ *{
+    box-sizing: border-box;
+    }
+        header {
+            border: 1px solid black;
+        }
+
+        span.cname {
+            font-size: 52px;
+        }
+     section{
+    	float: left;
+    	width:30%;
+    	height:500px;
+    	padding:20px;
+    	border: 2px solid green;
+    }   
+ 
+article{
+float:right;
+width:70%;
+height:500px;
+padding:10px;
+    	border: 2px solid green;
+    	overflow-y: scroll;
+
+}
+footer{
+text-align:center;
+    	border: 2px solid green;
+
+}
