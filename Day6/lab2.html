@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function test1(){
+    var no= document.getElementById("eno").value;
+    	var name = document.getElementById("ename").value;
+    	var salary = document.getElementById("sal").value;
+	document.getElementById("mydiv").innerHTML="<table border=1><tr><th>ENO</th><th>EName</th><th>Salary</th></tr><tr><td>"+no+"</td><td>"+name+"</td><td>"+salary+"</td></tr></table>";
+}
+
+</script>
+
+</head>
+<body>
+ENO:  <input type="text" id="eno" /><br/>
+Name : <input type="text" id="ename" /><br/>
+Salary: <input type="text" id="sal" /><br/>
+<input  id ="btn" type="button" value="Click Me" onclick="test1()" />
+<div id="mydiv">Employee Details::</div>
+
+</body>
+</html>
