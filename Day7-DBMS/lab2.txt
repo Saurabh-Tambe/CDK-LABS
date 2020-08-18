@@ -1,3 +1,10 @@
+Remote Database:   sqlplus admin/mypassone@database-1.cyhhds8qhsga.us-east-1.rds.amazonaws.com:1521/ORCL
+
+Test1: https://forms.gle/MkvKv45anw4oBbcJA
+
+
+
+
 create table emp(empno number(3) primary key,ename varchar(20),salary number(7),dept char(2));
 
 insert into emp values(122,'Sai',120000,'IT');
@@ -39,3 +46,13 @@ select * from emp where salary<560;
 select * from emp where salary<=560;
 select * from emp where salary!=560;
 select * from emp where salary between 300 and 1000;
+
+ select count(empno) from emp group by dept;
+ select dept,count(empno) from emp group by dept;
+ select dept,max(salary),min (salary) from emp group by dept;
+ select dept,avg(salary) from emp group by dept;
+
+ select ename,dept from emp order by ename;
+ select dept,max(salary) from emp group by dept order by dept;
+
+
