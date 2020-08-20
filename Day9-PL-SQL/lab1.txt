@@ -1,0 +1,214 @@
+1.SAVE FILE AS LAB1.sql
+2.TO run on cmd goto the folder where file is saved //cd plsql
+3.@LAB1
+4.set serveroutput on
+------------------------------------------------------------------------------------------------------------
+/*HELLO WORLD*/
+DECLARE
+ message varchar2(100);
+BEGIN
+  message := 'Hello World';
+  dbms_output.put_line(message ||' from PL/SQL  ');
+END;
+/
+
+------------------------------------------------------------------------------------------------------------
+declare
+    l_today date := sysdate;
+begin
+    dbms_output.put_line(
+           'Year is '||to_char(l_today,'Year'));
+    dbms_output.put_line(
+           'Month is '||to_char(l_today,'Month'));
+    dbms_output.put_line(
+           'Day is '||to_char(l_today,'Day')); 
+    
+exception when others then
+    dbms_output.put_line(sqlerrm);
+end;
+/
+
+------------------------------------------------------------------------------------------------------------
+create table dept(deptno  number(2,0),  
+  dname      varchar2(14),  
+  loc        varchar2(13),  
+  constraint pk_dept primary key (deptno)  
+);
+
+insert into dept(DEPTNO, DNAME, LOC)
+values(10, 'ACCOUNTING', 'NEW YORK');
+insert into dept  
+values(20, 'RESEARCH', 'DALLAS');
+insert into dept  
+values(30, 'SALES', 'CHICAGO');
+insert into dept  
+values(40, 'OPERATIONS', 'BOSTON');
+-----------------------------------------------------------------
+
+
+DECLARE
+ v_deptno dept.deptno%TYPE;
+ v_dname dept.dname%TYPE ;
+ v_loc dept.loc%TYPE;
+BEGIN
+   v_deptno :=55;
+ v_dname :='assdd';
+ v_loc :='pune';
+  insert into dept values (v_deptno, v_dname,v_loc);
+  dbms_output.put_line('Inserted ...');
+END;
+/
+-----------------------------------------------------------------
+
+
+DECLARE
+ v_deptno dept.deptno%TYPE :=&deptno;
+ v_dname dept.dname%TYPE  := &dname;
+ v_loc dept.loc%TYPE := &loc;
+BEGIN
+  
+  insert into dept values (v_deptno, v_dname,v_loc);
+  dbms_output.put_line('Inserted ...');
+END;
+/
+
+-----------------------------------------------------------------
+DECLARE
+ v_loc dept.loc%TYPE := &loc;
+BEGIN
+ 
+  delete from dept where loc=v_loc;
+  dbms_output.put_line('Deleted ...');
+END;
+/
+-----------------------------------------------------------------
+DECLARE
+ v_deptno dept.deptno%TYPE;
+ v_dname dept.dname%TYPE ;
+ v_loc dept.loc%TYPE;
+BEGIN
+   v_deptno :=55;
+ 
+ v_loc :='Mumbai';
+  update dept set loc=v_loc where deptno=v_deptno;
+  dbms_output.put_line('Updated ...');
+END;
+/
+------------------------------------------------------------------------------------------------------------
+/*Create procedure*/
+CREATE OR REPLACE PROCEDURE greetings 
+AS 
+BEGIN 
+   dbms_output.put_line('Hello World!'); 
+END; 
+/
+
+exec greetings
+------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION totaldepts
+RETURN number 
+IS 
+   total number(2) := 0; 
+BEGIN 
+   SELECT count(*) into total 
+   FROM dept; 
+    
+   RETURN total; 
+END;
+
+------
+invoke a proc - exec nameofproc
+-----
+invoke a function from different proc /file
+DECLARE
+ message varchar2(100);
+ mytotal number(2) ;
+BEGIN
+  message := 'Hello World';
+  mytotal := totaldepts();
+  dbms_output.put_line(message ||' from PL/SQL and count =   ' ||mytotal );
+END;
+/
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+function reporting count(*)
+	mgr (int) -> number of people reporting to him
+write a procedure/function
+		to accept mgr number from user and invoke reporting fn
+-------
+CREATE OR REPLACE FUNCTION reportings(x IN number)
+RETURN number 
+IS 
+   total number(2) := 0; 
+BEGIN 
+   SELECT count(mgr) into total 
+   FROM emp where mgr=x; 
+    
+   RETURN total; 
+END; 
+/
+ -------------------
+ 
+ //CALL
+ 
+DECLARE
+  
+ mytotal number(2) ;
+BEGIN
+ 
+  mytotal := reportings(7698);
+  dbms_output.put_line('  count =   ' ||mytotal );
+END;
+/
+
+\\\\CALL
+DECLARE
+ v_mgr emp.mgr%TYPE :=&mgr;
+
+  
+ mytotal number(2) ;
+BEGIN
+ 
+  mytotal := reportings(v_mgr);
+  dbms_output.put_line('  count =   ' ||mytotal );
+END;
+/
+------------------------------------------------------------------------------------------------------------
+//cursor
+DECLARE
+ v_deptno dept.deptno%TYPE :=&deptno;
+ v_dname dept.dname%TYPE  := 'AA';
+ v_loc dept.loc%TYPE := 'Pnq';
+BEGIN
+  
+  insert into dept values (v_deptno, v_dname,v_loc);
+   IF sql%ROWCOUNT = 1 THEN 
+      dbms_output.put_line('Not Found, inserted successfully '); 
+   END IF;
+
+EXCEPTION
+	--dbms_output.put_line('exception  ...');
+	WHEN others THEN 
+      dbms_output.put_line('Problem inserting, Deptno exists'); 
+END;
+/
+----------------------------------------------
+
+
+DECLARE
+ CURSOR c_dept IS  select deptno, dname, loc from Dept;
+ v_deptno dept.deptno%TYPE ;
+ v_dname dept.dname%TYPE  ;
+ v_loc dept.loc%TYPE ;
+begin
+    dbms_output.put_line('in begin of deptlist'); 
+	OPEN c_dept; 
+	
+	LOOP 
+		FETCH c_dept INTO v_deptno, v_dname,v_loc;
+		EXIT WHEN c_dept%notfound; 
+		dbms_output.put_line('Data = '  || v_deptno || ', ' ||v_dname || ', ' || v_loc); 
+	END LOOP; 
+END;
+/
