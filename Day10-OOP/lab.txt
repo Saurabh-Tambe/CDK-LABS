@@ -1,1 +1,17 @@
+Case Study 1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.	There will be different users with New, Prep, Chasing rights and each kind of user would be able to move the trade to next phase.   ----->>  Inheritance
+2.  NewTrade user can see only trades in New and exception phase and so on.Except New user no other user should be able to see exception trades.  ---->>   Data Abstraction
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Case Study 2
+
+Abstraction:----->> employees can only access and edit their own time cards and purchase orders other data should be hidden.
+Encapusalation:----->> Data and Functions related with particular user should be encapsulated
+Polymorphism :----->> Payment –there are multiple forms of payment method
+ 
+ 
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
